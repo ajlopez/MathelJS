@@ -30,3 +30,15 @@ exports['create vector with values'] = function (test) {
     test.done();
 };
 
+exports['create vector with value and size'] = function (test) {
+    var vector = vectors.createVector({ value: 3, size: 10 });
+    
+    test.ok(vector);
+    test.equal(typeof vector, 'object');
+    test.equal(vector.size(), 10);
+    
+    for (var k = 0; k < vector.size(); k++)
+        test.equal(vector.element(k), 3);
+        
+    test.done();
+}
