@@ -68,3 +68,21 @@ exports['get elements'] = function (test) {
     test.done();
 };
 
+exports['simple inner product'] = function (test) {
+    var values1 = [ 1, 2, 3 ];
+    var values2 = [ 2, 3, 4 ];
+    
+    var vector1 = vectors.createVector({ values: values1 });
+    var vector2 = vectors.createVector({ values: values2 });
+    
+    var result = vector1.innerProduct(vector2);
+    
+    test.ok(result);
+    test.equal(typeof result, 'object');
+    test.ok(result.isVector());
+    test.equal(result.size(), 3);
+    test.deepEqual(result.elements(), [ 2, 6, 12 ]);
+    
+    test.done();
+}
+
