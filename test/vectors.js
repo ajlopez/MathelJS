@@ -87,3 +87,11 @@ exports['simple inner product'] = function (test) {
     test.done();
 }
 
+exports['get undefined value as zero'] = function (test) {
+    var vector = vectors.createVector({ values: [ 1, 2, 3 ] });
+    
+    test.strictEqual(vector.element(3), 0);
+    test.strictEqual(vector.element(-1), 0);
+    
+    test.done();
+}
