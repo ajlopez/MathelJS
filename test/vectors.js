@@ -41,4 +41,13 @@ exports['create vector with value and size'] = function (test) {
         test.equal(vector.element(k), 3);
         
     test.done();
-}
+};
+
+exports['create vector without options'] = function (test) {
+    var vector = vectors.createVector();
+    
+    test.ok(vector);
+    test.equal(typeof vector, 'object');
+    test.equal(vector.size(), 0);
+};
+
