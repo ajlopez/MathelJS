@@ -15,3 +15,23 @@ exports['create matrix with rows and columns'] = function (test) {
     
     test.done();
 };
+
+exports['create matrix with values'] = function (test) {
+    var matrix = matrices.createMatrix({ values: [ [ 1, 2, 3 ], [ 4, 5, 6 ] ] });
+    
+    test.ok(matrix);
+    test.equal(typeof matrix, 'object');
+    test.equal(matrix.nrows(), 2);
+    test.equal(matrix.ncolumns(), 3);
+    
+    var value = 1;
+    
+    for (var k = 0; k < matrix.nrows(); k++)
+        for (var j = 0; j < matrix.ncolumns(); j++) {
+            test.equal(matrix.element(k, j), value);
+            value++;
+        }
+    
+    test.done();
+};
+
