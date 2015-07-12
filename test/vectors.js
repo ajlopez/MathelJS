@@ -1,0 +1,32 @@
+
+var vectors = require('../lib/vectors');
+
+exports['create vector with size'] = function (test) {
+    var vector = vectors.createVector({ size: 4 });
+    
+    test.ok(vector);
+    test.equal(typeof vector, "object");
+    test.ok(vector.isVector());
+    test.equal(vector.size(), 4);
+    test.equal(vector.element(0), 0);
+    test.equal(vector.element(1), 0);
+    test.equal(vector.element(2), 0);
+    test.equal(vector.element(3), 0);
+    
+    test.done();
+};
+
+exports['create vector with values'] = function (test) {
+    var vector = vectors.createVector({ values: [ 1, 2, 3, 4 ] });
+    
+    test.ok(vector);
+    test.equal(typeof vector, "object");
+    test.equal(vector.size(), 4);
+    test.equal(vector.element(0), 1);
+    test.equal(vector.element(1), 2);
+    test.equal(vector.element(2), 3);
+    test.equal(vector.element(3), 4);
+    
+    test.done();
+};
+
