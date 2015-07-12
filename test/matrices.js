@@ -58,3 +58,10 @@ exports['get undefined values as zero'] = function (test) {
     
     test.done();
 };
+
+exports['get simple determinant'] = function (test) {
+    var matrix = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
+    
+    test.equal(matrix.determinant(), -2);
+};
+
