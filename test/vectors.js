@@ -7,6 +7,7 @@ exports['create vector with size'] = function (test) {
     test.ok(vector);
     test.equal(typeof vector, "object");
     test.ok(vector.isVector());
+    test.ok(!vector.isMatrix());
     test.equal(vector.size(), 4);
     test.equal(vector.element(0), 0);
     test.equal(vector.element(1), 0);
