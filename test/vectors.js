@@ -49,5 +49,22 @@ exports['create vector without options'] = function (test) {
     test.ok(vector);
     test.equal(typeof vector, 'object');
     test.equal(vector.size(), 0);
+    
+    test.done();
+};
+
+exports['get elements'] = function (test) {
+    var values = [ 1, 2, 3, 4 ];
+    var vector = vectors.createVector({ values: values });
+
+    values[1] = 2;
+
+    var elements = vector.elements();
+    
+    test.ok(elements);
+    test.ok(Array.isArray(elements));
+    test.deepEqual(elements, [ 1, 2, 3, 4 ]);
+    
+    test.done();
 };
 
