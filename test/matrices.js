@@ -65,3 +65,10 @@ exports['get simple determinant'] = function (test) {
     test.equal(matrix.determinant(), -2);
 };
 
+exports['throws for determinant when matrix is not square'] = function (test) {
+    test.throws(
+        function () { matrices.createMatrix({ rows: 2, columns: 3 }).determinant() },
+        "Matrix is not square"
+    );
+};
+
