@@ -28,7 +28,8 @@ TBD
 
 ## References
 
-TBD
+- [MathLib Repository](https://github.com/alawatthe/MathLib)
+- [MathLib, JavaScript library for mathematical computations](http://mathlib.de/en)
 
 ## Contribution
 
