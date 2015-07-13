@@ -87,6 +87,24 @@ exports['simple inner product'] = function (test) {
     test.done();
 }
 
+exports['simple add'] = function (test) {
+    var values1 = [ 1, 2, 3 ];
+    var values2 = [ 2, 3, 4 ];
+    
+    var vector1 = vectors.createVector({ values: values1 });
+    var vector2 = vectors.createVector({ values: values2 });
+    
+    var result = vector1.add(vector2);
+    
+    test.ok(result);
+    test.equal(typeof result, 'object');
+    test.ok(result.isVector());
+    test.equal(result.size(), 3);
+    test.deepEqual(result.elements(), [ 3, 5, 7 ]);
+    
+    test.done();
+}
+
 exports['get undefined value as zero'] = function (test) {
     var vector = vectors.createVector({ values: [ 1, 2, 3 ] });
     
