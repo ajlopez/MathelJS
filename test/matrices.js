@@ -63,6 +63,7 @@ exports['get simple determinant'] = function (test) {
     var matrix = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
     
     test.equal(matrix.determinant(), -2);
+    test.done();
 };
 
 exports['throws for determinant when matrix is not square'] = function (test) {
@@ -70,5 +71,18 @@ exports['throws for determinant when matrix is not square'] = function (test) {
         function () { matrices.createMatrix({ rows: 2, columns: 3 }).determinant() },
         "Matrix is not square"
     );
+    test.done();
+};
+
+exports['simple add'] = function (test) {
+    var matrix1 = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
+    var matrix2 = matrices.createMatrix({ values: [ [ 1, 2 ], [ -1, -3 ] ] });
+    
+    var matrix = matrix1.add(matrix2);
+    
+    test.ok(matrix);
+    test.deepEqual(matrix.elements(), [ [ 3, 5 ], [ 3, 2 ] ]);
+    
+    test.done();
 };
 
