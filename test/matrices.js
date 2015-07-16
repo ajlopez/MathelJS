@@ -86,3 +86,15 @@ exports['simple add'] = function (test) {
     test.done();
 };
 
+exports['simple subtract'] = function (test) {
+    var matrix1 = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
+    var matrix2 = matrices.createMatrix({ values: [ [ 1, 2 ], [ -1, -3 ] ] });
+    
+    var matrix = matrix1.subtract(matrix2);
+    
+    test.ok(matrix);
+    test.deepEqual(matrix.elements(), [ [ 1, 1 ], [ 5, 8 ] ]);
+    
+    test.done();
+};
+
