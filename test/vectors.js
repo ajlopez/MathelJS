@@ -123,6 +123,23 @@ exports['simple subtract'] = function (test) {
     test.done();
 }
 
+exports['negate'] = function (test) {
+    var values1 = [ 1, 2, 3 ];
+    var values2 = [ 2, 3, 4 ];
+    
+    var vector = vectors.createVector({ values: [ 2, 3, 4 ] });
+    
+    var result = vector.negate();
+    
+    test.ok(result);
+    test.equal(typeof result, 'object');
+    test.ok(result.isVector());
+    test.equal(result.size(), 3);
+    test.deepEqual(result.elements(), [ -2, -3, -4 ]);
+    
+    test.done();
+}
+
 exports['get undefined value as zero'] = function (test) {
     var vector = vectors.createVector({ values: [ 1, 2, 3 ] });
     
