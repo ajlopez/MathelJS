@@ -98,3 +98,13 @@ exports['simple subtract'] = function (test) {
     test.done();
 };
 
+exports['negate'] = function (test) {
+    var matrix = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
+    
+    var result = matrix.negate();
+    
+    test.ok(result);
+    test.deepEqual(result.elements(), [ [ -2, -3 ], [ -4, -5 ] ]);
+    
+    test.done();
+};
