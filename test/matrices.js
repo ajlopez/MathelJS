@@ -108,3 +108,14 @@ exports['negate'] = function (test) {
     
     test.done();
 };
+
+exports['traspose'] = function (test) {
+    var matrix = matrices.createMatrix({ values: [ [ 2, 3, 4 ], [ 4, 5, 6 ] ] });
+    
+    var result = matrix.traspose();
+    
+    test.ok(result);
+    test.deepEqual(result.elements(), [ [ 2, 4 ], [ 3, 5 ], [ 4, 6 ] ]);
+    
+    test.done();
+};
