@@ -98,6 +98,18 @@ exports['simple subtract'] = function (test) {
     test.done();
 };
 
+exports['simple multiply'] = function (test) {
+    var matrix1 = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
+    var matrix2 = matrices.createMatrix({ values: [ [ 1, 2 ], [ -1, -3 ] ] });
+    
+    var matrix = matrix1.multiply(matrix2);
+    
+    test.ok(matrix);
+    test.deepEqual(matrix.elements(), [ [ 2 * 1 + 3 * -1, 2 * 2 + 3 * -3 ], [ 4 * 1 + 5 * -1, 4 * 2 + 5 * -3 ] ]);
+    
+    test.done();
+};
+
 exports['negate'] = function (test) {
     var matrix = matrices.createMatrix({ values: [ [ 2, 3 ], [ 4, 5 ] ] });
     
