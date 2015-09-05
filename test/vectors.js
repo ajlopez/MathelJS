@@ -148,3 +148,19 @@ exports['get undefined value as zero'] = function (test) {
     
     test.done();
 }
+
+exports['multiply vector by number'] = function (test) {
+    var vector1 = vectors.createVector({ values: [ 1, 2, 3, 4 ] });
+    var vector = vector1.multiply(3);
+    
+    test.ok(vector);
+    test.equal(typeof vector, "object");
+    test.equal(vector.size(), 4);
+    test.equal(vector.element(0), 3);
+    test.equal(vector.element(1), 6);
+    test.equal(vector.element(2), 9);
+    test.equal(vector.element(3), 12);
+    
+    test.done();
+};
+
