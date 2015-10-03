@@ -164,3 +164,9 @@ exports['multiply vector by number'] = function (test) {
     test.done();
 };
 
+exports['vector to string'] = function (test) {
+    var vector = vectors.createVector({ values: [ 1, 2, 3, 4 ] });
+    
+    test.equal(vector.toString(), "[ 1, 2, 3, 4 ]");
+    test.done();
+};
